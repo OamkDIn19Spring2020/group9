@@ -27,21 +27,20 @@ class Login extends CI_Controller{
     if($realPassword == $given_password){
       $_SESSION['logged_in'] = true;
       $_SESSION['username'] = $given_username;
+      $_SESSION['error_message'] = "";
       redirect('camp');
 
     // unsuccesful
     }else{
       $_SESSION['logged_in'] = false;
-      redirect('camp');
+      $_SESSION['error_message'] = "Username or password are wrong! Please try again...";
+      redirect('login');
     }
 
   }
-
+  
   public function logout(){
     $_SESSION['logged_in'] = false;
     redirect('camp');
   }
-
-
-
 }

@@ -24,6 +24,7 @@ class Users_model extends CI_Model{
 
   public function addUser($insert_data){
     $this->db->insert('users', $insert_data);
+    return $this->db->affected_rows();
   }
 
 

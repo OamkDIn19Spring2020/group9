@@ -60,6 +60,9 @@
         }
         else{
           echo '<a class="nav-link" href="'.site_url('login').'">Login</a>';
+          echo '<li class="nav-item">
+          <a class="nav-link" href="'.site_url('signup').'">Sign Up</a>
+                </li>';
         }
         ?>
       </li>
