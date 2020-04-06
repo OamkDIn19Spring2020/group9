@@ -31,28 +31,40 @@
       <li class="nav-item">
         <a class="nav-link" href="#">About</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     <ul class="navbar-nav ml-auto">
+      <?php
+      if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true){
+        echo '<li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  '.$_SESSION['username'].'
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">My Campsites</a>
+                  <a class="dropdown-item" href="#">History</a>
+                  <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Account Settings</a>
+                  </div>
+              </li>';
+      }
+      ?>
       <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sign Up</a>
+        <?php
+        if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true){
+          echo '<a class="nav-link" href="'.site_url('login/logout').'">Logout</a>';
+        }
+        else{
+          echo '<a class="nav-link" href="'.site_url('login').'">Login</a>';
+          echo '<li class="nav-item">
+          <a class="nav-link" href="'.site_url('signup').'">Sign Up</a>
+                </li>';
+        }
+        ?>
       </li>
     </ul>
   </div>
