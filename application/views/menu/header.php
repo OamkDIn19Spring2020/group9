@@ -45,7 +45,7 @@
                   '.$_SESSION['username'].'
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">My Campsites</a>
+                  <a class="dropdown-item" href="'.site_url('mycampgrounds').'">My Campsites</a>
                   <a class="dropdown-item" href="#">History</a>
                   <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Account Settings</a>
@@ -69,3 +69,5 @@
     </ul>
   </div>
 </nav>
+
+<div class="container">
