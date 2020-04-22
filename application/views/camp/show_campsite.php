@@ -8,6 +8,10 @@
 -->
 
 <?php
+
+
+
+  
 $groundname_clean = urldecode($groundname);
 $query = $this->db->query("SELECT * from campground WHERE name = '$groundname_clean';");
 
@@ -16,11 +20,10 @@ $row = $query->row();
 if (isset($row)){
 $user = $row->user_name;
 $name = $row->name;
-$img = base_url() . $row->img;
+$img = $row->img;
 $descr = $row->description;
 $price = $row->price;
 $id = $row->camp_id;
-echo $name;
 }
 
 echo "<h2>" . $name . "</h2>";
@@ -35,11 +38,24 @@ if (empty($comms->result())) {
     echo "Sorry, no comments here yet!";
 }
 else {
-    echo "<table>" . "<tr><th span=2>User</th></tr>";
+    echo '<table style="width:85%">';
 foreach ($comms->result() as $row) {
-    echo "<tr><td>" . $row->user_name . "</td>";
-    echo "<td>" . $row->content . "</td></tr>";
+    echo '<tr><td style="padding:15px"><b>' . $row->user_name . "</b></td><td style='text-align:right'>Comment #". $row->comment_id . "</td></tr>";
+    echo '<tr style="border-bottom:1px solid black"><td style="padding:15px" colspan="2">' . $row->content . "</td></tr>";
+}
 }
 echo "</table>";
+
+if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true){
+  echo '<div style="padding-top:35px;width:80%">
+  <form id="commentinput" action="' . site_url('Mycomments/addComment') . '" method="post">
+  <label for="content">Add comment:</label><br>
+  <input type="text" id="content" name="content" style="width:100%;margin-bottom:25px"><br>
+  <input type="hidden" id="camp_id" name="camp_id" value="' . $id . '">
+  <input type="hidden" id="camp_name" name="camp_name" value="' . $name . '">
+  <input type="submit" value="Submit" style="float:right">
+  </form>
+  </div>';
 }
+
 ?>
