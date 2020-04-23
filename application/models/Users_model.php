@@ -27,6 +27,17 @@ class Users_model extends CI_Model{
     return $this->db->affected_rows();
   }
 
+  public function updateUser($user_name, $update_data){
+    $this->db->where('user_name', $user_name);
+    $this->db->update('users', $update_data);
+    return $this->db->affected_rows();
+  }
+
+  public function deleteAccount($user_name){
+    $this->db->where('user_name', $user_name);
+    $this->db->delete('users');
+    return $this->db->affected_rows();
+  }
 
 
 }

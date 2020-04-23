@@ -27,6 +27,7 @@ class Login extends CI_Controller{
     if($realPassword == $given_password){
       $_SESSION['logged_in'] = true;
       $_SESSION['username'] = $given_username;
+      $_SESSION['password'] = $given_password;
       $_SESSION['error_message'] = "";
       redirect('camp');
 

@@ -25,6 +25,8 @@ description VARCHAR(255),
 price FLOAT NOT NULL,
 
 FOREIGN KEY(user_name) references users (user_name)
+ ON DELETE CASCADE
+ ON UPDATE CASCADE
 )
 
 ===================================
