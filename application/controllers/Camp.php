@@ -20,4 +20,10 @@ class Camp extends CI_Controller{
     $this->load->view('menu/content', $data);
   }
 
+  public function show_campsite($campname = null){
+    $data['page'] = 'camp/show_campsite';
+    $data['groundname'] = $campname;
+    $this->load->view('menu/content', $data);
+  }
+
 }
