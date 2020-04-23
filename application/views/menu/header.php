@@ -48,7 +48,7 @@
                   <a class="dropdown-item" href="'.site_url('mycampgrounds').'">My Campsites</a>
                   <a class="dropdown-item" href="#">History</a>
                   <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Account Settings</a>
+                    <a class="dropdown-item" href="'.site_url('myaccount').'">Account Settings</a>
                   </div>
               </li>';
       }
