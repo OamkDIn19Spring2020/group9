@@ -27,17 +27,17 @@ class Myaccount extends CI_Controller{
     if($this->form_validation->run() == FALSE){
       $data['success'] = false;
       $data['error'] = validation_errors();
-      // $data['pass'] = $this->Users_model->getPassword($user_name);
+      $data['pass'] = $_SESSION['password'];
     }else{
       $data['success'] = true;
       $data['error'] = "";
 
       // Update users database
       $user_name = $_SESSION['username'];
-      $password = $this->Users_model->getPassword($user_name);
+      //$password = $this->Users_model->getPassword($user_name);
       $update_data = array(
         'user_name' => $this->input->post('username'),
-        'pass' => reset($password[0])
+        'pass' => $_SESSION['password']
       );
       $this->Users_model->updateUser($user_name, $update_data);
       
@@ -89,7 +89,7 @@ class Myaccount extends CI_Controller{
     $this->Users_model->deleteAccount($username);
 
     $_SESSION['logged_in'] = false;
-    $data['redirect'] = 'camp';
+    $data['redirect'] = site_url('camp');
 
     echo json_encode($data);
   }
