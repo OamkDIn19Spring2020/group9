@@ -3,9 +3,9 @@
 <?php
 // print_r($camps);
 
-echo '<div class="card-deck">';
+echo '<div>';
 foreach($camps as $camp){
-    echo '<div class="card" style="width: 18rem;">
+    echo '<div class="card" style="width: 18rem; display: inline-block;">
     <img src="'.$camp['img'].'" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">'.$camp['name'].'</h5>
@@ -38,16 +38,16 @@ echo '</div>';
                 <form class="" action="<?php echo site_url('mycampgrounds/addCampground'); ?>" method="post">
                   <div class="form-group">
                     <label for="name">Camp Name</label> <br>
-                    <input type="text" id="name" name="name" value=""> <br>
+                    <input type="text" class="form-control" id="name" name="name" value=""> <br>
 
                     <label for="img">Image URL</label> <br>
-                    <input type="text" id="img" name="img" value=""> <br>
+                    <input type="text" class="form-control" id="img" name="img" value=""> <br>
 
                     <label for="description">Description</label> <br>
-                    <input type="text" id="description" name="description" value=""> <br>
+                    <input type="text" class="form-control" id="description" name="description" value=""> <br>
 
                     <label for="price">Price</label> <br>
-                    <input type="number" id="price" name="price" value=""> <br>
+                    <input type="number" class="form-control" id="price" name="price" value=""> <br>
                   </div>
                   <input type="submit" class="btn btn-primary" name="" value="Create">
                 </form>
@@ -75,16 +75,16 @@ echo '</div>';
                         <div class="form-group">
                           <input type="hidden" id="edit_camp_id" name="camp_id" value="" >
                           <label for="edit_name">Campground Name</label> <br>
-                          <input type="text" id="edit_name" name="name" value=""> <br>
+                          <input type="text" class="form-control" id="edit_name" name="name" value=""> <br>
 
                           <label for="edit_img">Image URL</label> <br>
-                          <input type="text" id="edit_img" name="img" value=""> <br>
+                          <input type="text" class="form-control" id="edit_img" name="img" value=""> <br>
 
                           <label for="edit_description">Description</label> <br>
-                          <input type="text" id="edit_description" name="description" value=""> <br>
+                          <input type="text" class="form-control" id="edit_description" name="description" value=""> <br>
 
                           <label for="edit_price">Image URL</label> <br>
-                          <input type="number" id="edit_price" name="price" value=""> <br>
+                          <input type="number" class="form-control" id="edit_price" name="price" value=""> <br>
                         </div>
                         <input type="submit" class="btn btn-primary" name="" value="Update">
                       </form>
