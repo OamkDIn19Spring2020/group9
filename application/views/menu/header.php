@@ -6,8 +6,12 @@
     <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
+      <!-- jQuery ui css library -->
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
       <!-- jQuery library -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
       <!-- Popper JS -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -46,7 +50,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="'.site_url('mycampgrounds').'">My Campsites</a>
-                  <a class="dropdown-item" href="#">History</a>
+                  <a class="dropdown-item" href="'.site_url('myreservations').'">My Reservations</a>
                   <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="'.site_url('myaccount').'">Account Settings</a>
                   </div>

@@ -52,9 +52,16 @@ CREATE TABLE reservation(
 reservation_id INT primary key auto_increment,
 start DATE NOT NULL,
 end Date NOT NULL,
+price INT NOT NULL,
 camp_id INT NOT NULL,
+user_name VARCHAR(20),
 
 FOREIGN KEY(camp_id) references campground(camp_id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+FOREIGN KEY(user_name) references users (user_name)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 )
 
 
