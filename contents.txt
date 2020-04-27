@@ -1,3 +1,15 @@
+INSERT INTO `users` (`user_name`, `pass`) VALUES
+('bestcamps', 'bestbest'),
+('camping', 'camping'),
+('elite', 'l33t'),
+('iamclever', 'arenti'),
+('insertname', 'pass'),
+('mousetrap', 'itsatrap'),
+('suomu', '123abc'),
+('taavetti', 'abc123'),
+('user123', 'password123'),
+('user2', '1234');
+
 
 INSERT INTO `campground` (`camp_id`, `user_name`, `name`, `img`, `description`, `price`) VALUES
 (1, 'user123', 'Riverside', 'https://miro.medium.com/max/1200/1*ZwsuiM48pU22ugmPQq_5vA.jpeg', 'A calm spot next to a river.', 20),
@@ -10,3 +22,21 @@ INSERT INTO `campground` (`camp_id`, `user_name`, `name`, `img`, `description`, 
 (8, 'bestcamps', 'Landslide', 'https://projectcamping.com/wp-content/uploads/2019/06/how-to-choose-a-campsite-1200x928.png', 'No actual landslides here, don\'t worry!', 20),
 (9, 'user2', 'Forest Floor', 'https://education.minecraft.net/wp-content/uploads/campsite-554x368.png', 'Trees. Ground. Maybe some bugs. What else do you need?', 25),
 (10, 'bestcamps', 'Wild Palace', 'https://share1.vacanceselect.com/media/ALL/img/etabs/gallery/102/slider_listing/01.jpg', 'Only the best is good enough for you! Enjoy the vast forest without giving up on basic niceties. Water, electricity, and wi-fi included!', 75);
+
+
+
+INSERT INTO `comment` (`comment_id`, `camp_id`, `user_name`, `content`) VALUES
+(1, 1, 'taavetti', 'Not bad, I guess.'),
+(2, 5, 'user2', 'Nice if you don\'t mind the shallow graves.'),
+(3, 2, 'elite', 'I\'ve seen worse.'),
+(4, 6, 'bestcamps', 'Hardly any eldritch abominations hiding underneath.'),
+(5, 10, 'iamclever', 'Horrible! The wi-fi was spotty and slow, never again!'),
+(6, 3, 'suomu', 'It\'s okay'),
+(7, 4, 'suomu', 'It\'s okay'),
+(8, 8, 'suomu', 'It\'s okay'),
+(9, 10, 'suomu', 'It\'s okay'),
+(10, 6, 'elite', 'Pretty sure I saw Big Foot, worth it'),
+(11, 6, 'taavetti', 'Someone held me while I slept. Kinda weird since I was alone, but it was warm.'),
+(15, 8, 'bestcamps', 'Blah.'),
+(16, 5, 'bestcamps', 'Very spoopy, much corpse.'),
+(17, 6, 'bestcamps', 'How did I end up here again?');
