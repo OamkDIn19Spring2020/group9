@@ -7,12 +7,14 @@ class Camp extends CI_Controller{
   {
     parent::__construct();
     $this->load->model('Reservation_model');
+    $this->load->model('Campground_model');
     //Codeigniter : Write Less Do More
   }
 
   function index()
   {
-    $data['page'] = 'camp/home';
+    $data['campsites'] = $this->Campground_model->getCampground();
+    $data['page'] = 'camp/home'; 
     $this->load->view('menu/content', $data);
   }
 

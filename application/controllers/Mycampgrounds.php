@@ -6,7 +6,8 @@ class Mycampgrounds extends CI_Controller {
 	public function __construct()
   	{
     	parent::__construct();
-    	$this->load->model('Campground_model');
+		$this->load->model('Campground_model');
+		$this->load->helper(array('form', 'url'));
   	}
 
 	public function index()
@@ -17,32 +18,71 @@ class Mycampgrounds extends CI_Controller {
 	}
 
 	public function addCampground()
-	{
-		$insert_data = array(
-			'user_name' => $_SESSION['username'],
-			'name' => $this->input->post('name'),
-			'img' => $this->input->post('img'),
-			'description' => $this->input->post('description'),
-			'price' => $this->input->post('price')
-		);
-
-		$this->Campground_model->addCampground($insert_data);
-		redirect('mycampgrounds');
+	{	
+		// Image upload configurations
+		$config = array(
+			'upload_path' => './Images/',
+			'allowed_types' => "gif|jpg|png|jpeg|pdf",
+			'overwrite' => TRUE,
+			'max_size' => "2048000",
+			'max_height' => "768",
+			'max_width' => "1024"
+			);
+		$this->load->library('upload', $config);
+		
+		// In case image fails to upload
+		if(! $this->upload->do_upload('img')){
+			$data['page'] = 'mycampgrounds/new_campground';
+			$data['result'] = $this->upload->display_errors();
+			$this->load->view('menu/content', $data);
+		} else{ // Otherwise upload to Images folder
+			$insert_data = array(
+				'user_name' => $_SESSION['username'],
+				'name' => $this->input->post('name'),
+				'img' => base_url('Images').'/'.$this->upload->data('file_name'),
+				'description' => $this->input->post('description'),
+				'price' => $this->input->post('price')
+			);
+	
+			$this->Campground_model->addCampground($insert_data);
+			redirect('mycampgrounds');
+		}
+		
 	}
 
 	public function updateCampground()
 	{
-		$camp_id = $this->input->post('camp_id');
-		$update_data = array(
+		// Image upload configurations
+		$config = array(
+			'upload_path' => './Images/',
+			'allowed_types' => "gif|jpg|png|jpeg|pdf",
+			'overwrite' => TRUE,
+			'max_size' => "2048000",
+			'max_height' => "768",
+			'max_width' => "1024"
+			);
+		$this->load->library('upload', $config);
+
+		// In case image fails to upload
+		if(! $this->upload->do_upload('img')){
+			// $data['page'] = 'mycampgrounds/new_campground';	
+			// $this->load->view('menu/content', $data);
+			$image = $this->input->post('img_path');
+		} else { // In case image succeeds
+			$image = base_url('Images').'/'.$this->upload->data('file_name');
+		}
+			$camp_id = $this->input->post('camp_id');
+			$update_data = array(
 			'user_name' => $_SESSION['username'],
 			'name' => $this->input->post('name'),
-			'img' => $this->input->post('img'),
+			'img' => $image,
 			'description' => $this->input->post('description'),
 			'price' => $this->input->post('price')
-		);
+			);
 
-		$this->Campground_model->updateCampground($camp_id, $update_data);
-		redirect('mycampgrounds');
+			$this->Campground_model->updateCampground($camp_id, $update_data);
+			redirect('mycampgrounds');
+		
 	}
 
 	public function deleteCampground()
