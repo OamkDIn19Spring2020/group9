@@ -1,0 +1,12 @@
+
+INSERT INTO `campground` (`camp_id`, `user_name`, `name`, `img`, `description`, `price`) VALUES
+(1, 'user123', 'Riverside', 'https://miro.medium.com/max/1200/1*ZwsuiM48pU22ugmPQq_5vA.jpeg', 'A calm spot next to a river.', 20),
+(2, 'taavetti', 'Spot 12', 'https://cdn.prod.v2.camping.info/media/campsites/campsite-international-rizos-meteora/NNhD2UPX67l4.jpg', 'A spot on camping grounds. Water and electricity available.', 35),
+(3, 'taavetti', 'Spot 14', 'https://cdn.prod.v2.camping.info/media/campsites/campsite-international-rizos-meteora/NNhD2UPX67l4.jpg', 'A spot on camping grounds. Water and electricity available.', 35),
+(4, 'taavetti', 'Spot 15', 'https://cdn.prod.v2.camping.info/media/campsites/campsite-international-rizos-meteora/NNhD2UPX67l4.jpg', 'A spot on camping grounds. Water and electricity available.', 35),
+(5, 'mousetrap', 'Allikko', 'https://gamespot1.cbsistatic.com/uploads/scale_landscape/1552/15524586/3645340-campsite.jpg', 'This is definitely a campground and not a place for me to hide the bodies of my victims.', 150),
+(6, 'camping', 'Monster Mansion', 'https://cdn1.acsi.eu/5/e/2/6/5e263479b9d98.jpeg', 'You will never feel alone here! Wi-Fi included.', 50),
+(7, 'suomu', 'Takala', 'https://dalslandnordmarken.se/wp-content/uploads/2016/07/dano-turid-53650.jpg', 'Idk it is in my backyard stay there if you want.', 15),
+(8, 'bestcamps', 'Landslide', 'https://projectcamping.com/wp-content/uploads/2019/06/how-to-choose-a-campsite-1200x928.png', 'No actual landslides here, don\'t worry!', 20),
+(9, 'user2', 'Forest Floor', 'https://education.minecraft.net/wp-content/uploads/campsite-554x368.png', 'Trees. Ground. Maybe some bugs. What else do you need?', 25),
+(10, 'bestcamps', 'Wild Palace', 'https://share1.vacanceselect.com/media/ALL/img/etabs/gallery/102/slider_listing/01.jpg', 'Only the best is good enough for you! Enjoy the vast forest without giving up on basic niceties. Water, electricity, and wi-fi included!', 75);
