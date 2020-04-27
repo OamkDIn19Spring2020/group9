@@ -2,7 +2,7 @@
 
 <p style="text-align:center">Welcome to CampIn! Visit Campgrounds to see our listed locations or log in to manage your own campsites.</p>
 
-<div style="text-align:center"> <img src="<?php echo base_url('Images') . '/Image' . rand(1, 33); ?>.jpg" id="image"></div>
+<div style="text-align:center"> <img src="<?php echo base_url('Images') . '/Image' . rand(1, 33); ?>.jpg" id="image" style="max-width:100%;height:auto"></div>
 
 <!--<p>
   The base url is <?php echo base_url(); ?>
