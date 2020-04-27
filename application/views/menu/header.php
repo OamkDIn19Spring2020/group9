@@ -18,6 +18,9 @@
 
       <!-- Latest compiled JavaScript -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+      <!-- Custom css -->
+      <link rel="stylesheet" href="<?php echo base_url('assets/css/mystyle.css') ?>">
   </head>
   <body>
 
