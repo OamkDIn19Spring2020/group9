@@ -33,6 +33,7 @@ class Signup extends CI_Controller{
       // Initialize session
       $_SESSION['logged_in'] = true;
       $_SESSION['username'] = $insert_data['user_name'];
+      $_SESSION['password'] = $insert_data['pass'];
 
       // Redirect to 'success' page
       $data['page'] = 'login/signup_success';
