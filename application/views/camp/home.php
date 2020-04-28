@@ -13,7 +13,7 @@ $campsite3 = $campsites[rand(0, $count)];
 
 
 echo '<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
+        <div class="carousel-inner car-size">
           <div class="carousel-item active">
             <a href="'.$base.'/'.$campsite1['name'].'">
               <img class="d-block w-100" src="'.$campsite1['img'].'" alt="First slide">

@@ -15,7 +15,7 @@
     <div class="form-group">
       <label for="username">New Username</label>
       <input type="text" class="form-control" id="username">
-      <small id="username_error" class="form-text text-muted"></small>
+      <small id="username_error" class="form-text text-muted" style="color:red;"></small>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
@@ -36,17 +36,17 @@ Edit Password</button>
     <div class="form-group">
       <label for="current_password">Current Password</label>
       <input type="password" class="form-control" id="current_password" placeholder="Enter old password here ...">
-      <small id="current_error" class="form-text text-muted"></small>
+      <small id="current_error" class="form-text text-muted" style="color: red"></small>
     </div>
     <div class="form-group">
       <label for="new_password">New Password</label>
       <input type="password" class="form-control" id="new_password">
-      <small id="new_error" class="form-text text-muted"></small>
+      <small id="new_error" class="form-text text-muted" style="color: red"></small>
     </div>
     <div class="form-group">
       <label for="conf_new_password">Confirm New Username</label>
       <input type="password" class="form-control" id="conf_new_password">
-      <small id="conf_new_error" class="form-text text-muted"></small>
+      <small id="conf_new_error" class="form-text text-muted" style="color: red"></small>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
