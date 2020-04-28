@@ -9,7 +9,7 @@ GRANT ALL on group9.* to 'ci_user'@'localhost' IDENTIFIED BY 'ci_pass';
 
 CREATE TABLE users(
 user_name VARCHAR(20) primary key,
-pass VARCHAR(255) NOT NULL,
+pass VARCHAR(255) NOT NULL
 )
 
 ====================

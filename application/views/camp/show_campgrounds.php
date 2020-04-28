@@ -18,10 +18,11 @@ foreach ($query->result() as $row)
           <img src="'.$image.'" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">'.$name.'</h5>
-            <p class="card-text">'.$descr.' <span>€'.$price.'</span></p>
+            <p class="card-text">'.$descr.' <span>€'.$price.'/night</span></p>
           </div>
         </a>';
 }
+
 echo '</div>';
 ?>
 </div>

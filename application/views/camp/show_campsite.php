@@ -80,8 +80,8 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true){
                   <div class="form-group"> 
                     <label for="price">Total Price:</label> <br>
                     <input type="text" id="price" name="price" value=""> <br>
-                    <input hidden type="text" name="camp_id" value="<? echo $id?>">
-                    <input hidden type="text" name="user_name" value="<? echo $_SESSION['username']?>">
+                    <input hidden type="text" name="camp_id" value="<?php echo $id ?>">
+                    <input hidden type="text" name="user_name" value="<?php echo $_SESSION['username']?>">
 
                   </div>
                   <input type="submit" id="submitReservation" class="btn btn-primary btn-block" name="" value="Reserve">
