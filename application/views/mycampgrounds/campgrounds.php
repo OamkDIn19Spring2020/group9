@@ -82,7 +82,7 @@ echo '</div>';
 
                           <label for="edit_img">Image URL</label> <br>
                           <input type="file" class="form-control" id="edit_img" name="img" value=""> <br>
-                          <input name="img_path" id="img_path">
+                          <input hidden name="img_path" id="img_path">
 
                           <label for="edit_description">Description</label> <br>
                           <input type="text" class="form-control" id="edit_description" name="description" value=""> <br>

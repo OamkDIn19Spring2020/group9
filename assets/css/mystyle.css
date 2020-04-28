@@ -18,3 +18,13 @@ a:hover {
 body {
     color: #002929;
 }
+
+.car-size {
+    max-height: 500px;
+    height: 70%;
+    width: auto;
+}
+
+nav {
+    margin: 0 30px;
+}

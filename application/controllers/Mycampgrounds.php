@@ -22,11 +22,10 @@ class Mycampgrounds extends CI_Controller {
 		// Image upload configurations
 		$config = array(
 			'upload_path' => './Images/',
-			'allowed_types' => "gif|jpg|png|jpeg|pdf",
-			'overwrite' => TRUE,
-			'max_size' => "2048000",
-			'max_height' => "768",
-			'max_width' => "1024"
+			'allowed_types' => "*",
+			'max_size' => "0",
+			'max_height' => "0",
+			'max_width' => "0"
 			);
 		$this->load->library('upload', $config);
 		
@@ -55,11 +54,10 @@ class Mycampgrounds extends CI_Controller {
 		// Image upload configurations
 		$config = array(
 			'upload_path' => './Images/',
-			'allowed_types' => "gif|jpg|png|jpeg|pdf",
-			'overwrite' => TRUE,
-			'max_size' => "2048000",
-			'max_height' => "768",
-			'max_width' => "1024"
+			'allowed_types' => "*",
+			'max_size' => "0",
+			'max_height' => "0",
+			'max_width' => "0"
 			);
 		$this->load->library('upload', $config);
 
